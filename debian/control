@@ -1,0 +1,28 @@
+Source: ruby-aptly-cli
+Section: ruby
+Priority: optional
+Maintainer: Yury Zavarin <yzavarin@ebi.ac.uk>
+Build-Depends:
+ debhelper (>= 9~),
+ gem2deb,
+ bundler,
+ rake (>= 10.0),
+ ruby-coveralls,
+ ruby-minitest,
+ ruby-simplecov,
+Build-Depends-Indep:
+ ruby-commander (>= 4.3),
+ ruby-httmultiparty (>= 0.3.16),
+Standards-Version: 3.9.7
+XS-Ruby-Versions: all
+
+Package: ruby-aptly-cli
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends:
+ ruby | ruby-interpreter,
+ ruby-commander (>= 4.3),
+ ruby-httmultiparty (>= 0.3.16),
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: a command line interface to execute Aptly commands
